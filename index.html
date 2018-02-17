@@ -26,6 +26,14 @@
         console.log("Wins: " + wins + "Losses: " + losses + "Guesses: " + guesses + 
         "GuessesLeft" + guessesLeft + "lettersToBeGuessed" + lettersToBeGuessed):
         var display = document.querySelector("#game");
+
+        function displayResults(){
+    var string = '<p>Wins: ' + wins; + '</p>';
+    string += '<p>Losses: ' + losses; + '</p>';
+    string += '<p>Guesses Left: ' + letterToBeGuessed; + '</p>';
+    string += '<p>Your Guesses: ' + guesses; + '</p>';
+    display.innerHTML = string;
+  }
         
         document.onkeyup = function(event){
         var key = event.key;
@@ -33,6 +41,30 @@
 			guesses = 0;
 			guessesLeft = 10;
         }
+
+    
+        var computerChoice = options[Math.floor(Math.random() * options.length)];
+        if (guesses < 10) {
+			if (key === computerChoice) {
+					alert("You win!");
+					wins++;
+					guesses++;
+					displayResults();
+					resetGame();
+			}
+			else {
+				lives--;
+				guesses++;
+				displayResults();
+			}
+		}
+		else {
+			alert("Computer wins!");
+			losses++;
+			resetGame();
+		}
+	}
+
         // Gusses Left
         if(guessesLeft==0) {
             losses++;
