@@ -1,1 +1,51 @@
+<DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Psychic Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" t href="style.css/reset.css" />
+    <script src="game.js"></script>
+</head>
+<body>
+    <h2>The Psychic Game</h2>
+    <h3>Press any key to Play!</h3>
+        <div id="game">
 
+        </div>
+        <script src="./assets/js/game.js">
+        var choices = ['a', 'b', 'c', 'd', 'e', 'f',
+         'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+         'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        var wins = 0;
+        var losses = 0;
+        var guesses = 0;
+        var guessesLeft = 10;
+        var letterToBeGuessed = choices[Math.floor(Math.random() * choices.length)];
+        console.log("Wins: " + wins + "Losses: " + losses + "Guesses: " + guesses + 
+        "GuessesLeft" + guessesLeft + "lettersToBeGuessed" + lettersToBeGuessed):
+        var display = document.querySelector("#game");
+        
+        document.onkeyup = function(event){
+        var key = event.key;
+		function resetGame() {
+			guesses = 0;
+			guessesLeft = 10;
+        }
+        // Gusses Left
+        if(guessesLeft==0) {
+            losses++;
+        console.log("You lost!");
+        guessesLeft = 9;
+        gusses =[];
+        letterToBeGuessed = choices[Math.floor(Math.random() * choices.length)];
+        console.log("Wins: " + wins + "Losses: " + losses + "Guesses: " + guesses + 
+        "GuessesLeft" + guessesLeft + "lettersToBeGuessed" + lettersToBeGuessed):
+        }
+
+
+
+    </script>        
+</body>
+</html>
