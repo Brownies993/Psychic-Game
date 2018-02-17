@@ -1,1 +1,1 @@
-# Psychic-Game
+Press any key to play "The Psychic Game!!" 
