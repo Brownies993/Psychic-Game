@@ -53,7 +53,7 @@
 					resetGame();
 			}
 			else {
-				lives--;
+				guessesLeft--;
 				guesses++;
 				displayResults();
 			}
@@ -63,10 +63,10 @@
 			losses++;
 			resetGame();
 		}
-	}
-
+    }
+    
         // Gusses Left
-        if(guessesLeft==0) {
+        if(guessesLeft===0) {
             losses++;
         console.log("You lost!");
         guessesLeft = 9;
@@ -76,7 +76,16 @@
         "GuessesLeft" + guessesLeft + "lettersToBeGuessed" + lettersToBeGuessed):
         }
 
-
+    //Letters to be guess
+    if(letterToBeGuessed===guesses) {
+        wins++;
+    console.log("You Won!");
+    guessesLeft = 9;
+    guessesSoFar = [];
+    letterToBeGuessed = choices[Math.floor(Math.random() * choices.length)];
+    console.log("Wins: " + wins + "Losses: " + losses + "Guesses Left: " + guessesLeft + "Guesses So Far: " + guessesSoFar + "Computer Picked: " + letterToBeGuessed);
+}
+    }
 
     </script>        
 </body>
